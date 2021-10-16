@@ -1,0 +1,33 @@
+{
+  "name": "matcher-grader",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/p-amonpitakpun/matcher-grader.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/p-amonpitakpun/matcher-grader/issues"
+  },
+  "homepage": "https://github.com/p-amonpitakpun/matcher-grader#readme",
+  "dependencies": {
+    "@discordjs/builders": "^0.6.0",
+    "@discordjs/rest": "^0.1.0-canary.0",
+    "discord-api-types": "^0.23.1",
+    "discord.js": "^13.2.0",
+    "dotenv": "^10.0.0",
+    "nodemon": "^2.0.13"
+  },
+  "devDependencies": {
+    "eslint": "^8.0.1",
+    "prettier": "2.4.1"
+  }
+}
