@@ -1,7 +1,6 @@
 {
-  "name": "matcher-grader",
+  "name": "matcher-app",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "type": "module",
   "scripts": {
@@ -29,5 +28,6 @@
   "devDependencies": {
     "eslint": "^8.0.1",
     "prettier": "2.4.1"
-  }
+  },
+  "description": ""
 }

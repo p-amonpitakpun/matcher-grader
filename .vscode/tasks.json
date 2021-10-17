@@ -6,7 +6,7 @@
         {
             "label": "node start",
             "type": "shell",
-            "command": "node --experimental-json-modules ."
+            "command": "cd matcher-app && node --experimental-json-modules .",
         }
     ]
 }
