@@ -6,7 +6,48 @@
         {
             "label": "node start",
             "type": "shell",
-            "command": "cd matcher-app && node --experimental-json-modules .",
+            "command": "cd matcher-app && node --experimental-json-modules ."
+        },
+        {
+            "type": "docker-build",
+            "label": "docker-build",
+            "platform": "node",
+            "dockerBuild": {
+                "dockerfile": "${workspaceFolder}/matcher-app/Dockerfile",
+                "context": "${workspaceFolder}/matcher-app",
+                "pull": true
+            },
+            "node": {
+                "package": "${workspaceFolder}/matcher-app/package.json"
+            }
+        },
+        {
+            "type": "docker-run",
+            "label": "docker-run: release",
+            "dependsOn": [
+                "docker-build"
+            ],
+            "platform": "node",
+            "node": {
+                "package": "${workspaceFolder}/matcher-app/package.json"
+            }
+        },
+        {
+            "type": "docker-run",
+            "label": "docker-run: debug",
+            "dependsOn": [
+                "docker-build"
+            ],
+            "dockerRun": {
+                "env": {
+                    "DEBUG": "*",
+                    "NODE_ENV": "development"
+                }
+            },
+            "node": {
+                "package": "${workspaceFolder}/matcher-app/package.json",
+                "enableDebugging": true
+            }
         }
     ]
 }

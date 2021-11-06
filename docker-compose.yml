@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  app:
+    image: matcher-app
+    build:
+      context: matcher-app
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: developement
+    ports:
+      - 3000:3000
+    volumes:
+      - /matcher-app:/src/app
+    secrets:
+      - CLIENT_ID
+      - GUILD_ID
+      - TOKEN
+secrets:
+  CLIENT_ID:
+    file: ./matcher-app/secrets/client_id.txt
+  GUILD_ID:
+    file: ./matcher-app/secrets/guild_id.txt
+  TOKEN:
+    file: ./matcher-app/secrets/token.txt
